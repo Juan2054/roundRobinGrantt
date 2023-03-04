@@ -13,14 +13,49 @@ body{
 
 .insert{
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
     padding: 12px;
     flex-basis: 20%;
 }
 
-#data-receiver {
+.insert-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.insert-container > label{
+    font-size: large;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold
+}
+
+.insert-container > textarea{
+    font-size: 30px;
     border-radius: 5px;
     box-shadow: 3px 3px 3px black;
+    margin-bottom: 24px;
+}
+
+.documentation{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    height: 100%;
+    padding: 12px;
+    padding-left: 30px;
+}
+
+.documentation > p{
+    font-size: large;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+}
+
+#format{
+    font-size: 26px;
+    text-align: center;
+    color: rgb(15, 0, 220);
 }
 
 .activate{
@@ -34,7 +69,7 @@ body{
     height: 30px;
     background-color: #4E6E81;
     color: #F9DBBB;
-    text-shadow: 2px 2px 1px black;
+    text-shadow: 2px 1px 1px black;
     font-weight: bold;
     box-shadow: 3px 3px 6px black;
     border-style: none;

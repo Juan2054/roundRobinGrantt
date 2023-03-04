@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    height: 100vh;
+}
+
+.insert{
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    flex-basis: 20%;
+}
+
+#data-receiver {
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px black;
+}
+
+.activate{
+    display: flex;
+    padding: 12px;
+    flex-basis: 20%;
+}
+
+#activate-button{
+    width: 70px;
+    height: 30px;
+    background-color: #4E6E81;
+    color: #F9DBBB;
+    text-shadow: 2px 2px 1px black;
+    font-weight: bold;
+    box-shadow: 3px 3px 6px black;
+    border-style: none;
+    border-color: #4E6E81;
+    border-radius: 10px;
+}
+
+.action{
+    flex-basis: 60%;
+}

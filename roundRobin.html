@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link href="//fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet" type="text/css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,25 +11,24 @@
     <title>Round Robin</title>
 </head>
 <body>
-     <div class="insert">
-        <div class="insert-container">
-            <label for="data-receiver">Ingrese los procesos</label>
-            <textarea name="" id="data-receiver" cols="50" rows="2"></textarea>
-            <label for="quantum-receiver">Ingrese el quantum</label>
-            <textarea name="" id="quantum-receiver" cols="50" rows="2"></textarea>
-        </div>
-        <div class="documentation">
-            <p>Para el correcto uso de los campos de ingreso, se requiere digitar los datos de la siguiente manera:<br><br><br><br></p>
-            <p id="format">Nombre del proceso : Rafaga en segundos</p>
-        </div>
-     </div>
-     <div class="activate">
-        <button id="activate-button" onclick="recibirDatos()">Enviar</button>
-        <p></p>
-     </div>
-     <div class="action">
-
-     </div>
+    <div class="card">
+        <div class="insert">
+            <div class="insert-container">
+                <label for="data-receiver">Ingrese los procesos</label>
+                <input type="text" id="data-receiver"></input>
+                <label for="quantum-receiver">Ingrese el quantum</label>
+                <input type="text" id="quantum-receiver"></input>
+            </div>
+            <div class="documentation">
+                <p id="statement">Para el correcto uso de los campos de ingreso, se requiere digitar los datos de la siguiente manera:<br><br><br></p>
+                <p id="format">Nombre del proceso : Rafaga en segundos</p>
+            </div>
+         </div>
+         <div class="activate">
+            <button id="activate-button" onclick="recibirDatos()">Enviar</button>
+            <p></p>
+         </div>
+    </div>
     <script src="roundRobin.js"></script>
 </body>
 </html>

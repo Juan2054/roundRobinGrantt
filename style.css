@@ -2,35 +2,48 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
 }
 
 body{
     display: flex;
     flex-direction: column;
-    background-color: antiquewhite;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(237, 237, 237);
     height: 100vh;
+}
+
+.card{
+    background-color: #fff;
+    width: 70%;
+    border-radius: 20px;
+    box-shadow: 4px 4px 16px 3px black;
+    margin: 10px;
+    padding: 24px;
 }
 
 .insert{
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    justify-content: space-around;
     padding: 12px;
-    flex-basis: 20%;
 }
 
 .insert-container{
     display: flex;
+    flex-basis: 50%;
     flex-direction: column;
 }
 
 .insert-container > label{
+    color: #323852;
     font-size: large;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold
 }
 
-.insert-container > textarea{
+.insert-container > input{
+    flex-basis: 100%;
     font-size: 30px;
     border-radius: 5px;
     box-shadow: 3px 3px 3px black;
@@ -39,6 +52,7 @@ body{
 
 .documentation{
     display: flex;
+    flex-basis: 50%;
     flex-direction: column;
     justify-content:flex-start;
     height: 100%;
@@ -47,36 +61,38 @@ body{
 }
 
 .documentation > p{
+    color: #323852;
     font-size: large;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
+}
+
+#statement{
+    font-size: 20px;
 }
 
 #format{
     font-size: 26px;
     text-align: center;
-    color: rgb(15, 0, 220);
+    color: #0a9ce7;
 }
 
 .activate{
     display: flex;
+    justify-content: flex-end;
     padding: 12px;
-    flex-basis: 20%;
 }
 
 #activate-button{
-    width: 70px;
-    height: 30px;
-    background-color: #4E6E81;
-    color: #F9DBBB;
+    width: 125px;
+    height: 50px;
+    margin-right: 24px;
+    background-color: #0a9ce7;
+    color: #Fff;
     text-shadow: 2px 1px 1px black;
+    font-size: 24px;
     font-weight: bold;
     box-shadow: 3px 3px 6px black;
     border-style: none;
     border-color: #4E6E81;
     border-radius: 10px;
-}
-
-.action{
-    flex-basis: 60%;
 }

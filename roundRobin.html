@@ -21,14 +21,21 @@
             </div>
             <div class="documentation">
                 <p id="statement">Para el correcto uso de los campos de ingreso, se requiere digitar los datos de la siguiente manera:<br><br></p>
-                <p id="format">Nombre del proceso : Rafaga en segundos</p>
+                <p id="format">Nombre del proceso : Rafaga en segundos <br><br></p>
+                <p id="statement">Si desea ingresar más de uno los debe separar por espacios o comas<br><br></p>
+                <p id="format">Ejemplo <br> P1:2,P2:5,P3:4</p>
             </div>
          </div>
          <div class="activate">
-            <button id="activate-button" onclick="recibirDatos()">Enviar</button>
-            <p></p>
+            <button class="activate-button" onclick="recibirDatos()">Enviar</button>
+            <button class="activate-button" onclick="borrarGrafico()">Limpiar</button>
          </div>
+    </div>          
+    <div id="chart-wrapper">
+        <canvas id="grantt"></canvas>
+        <button id="form-button" class="activate-button" onclick="borrarGrafico()">Limpiar</button>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="roundRobin.js"></script>
 </body>
 </html>

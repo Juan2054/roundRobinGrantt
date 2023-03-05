@@ -82,7 +82,7 @@ body{
     padding: 12px;
 }
 
-#activate-button{
+.activate-button {
     width: 125px;
     height: 50px;
     margin-right: 24px;
@@ -93,6 +93,30 @@ body{
     font-weight: bold;
     box-shadow: 3px 3px 6px black;
     border-style: none;
-    border-color: #4E6E81;
+    border-color: #0a9ce7;
     border-radius: 10px;
 }
+
+.action{
+    flex-basis: 60%;
+}
+
+#chart-wrapper {
+    display: none;
+    position: relative;
+    width: 70%;
+    background-color: rgb(237, 237, 237);
+    align-items: center;
+}
+
+#chart-wrapper > button{
+    margin-top: 50px;
+}
+
+
+#grantt{
+    border-radius: 10px;
+    background-color: white;
+}
+
+

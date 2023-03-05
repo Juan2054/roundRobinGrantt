@@ -17,12 +17,13 @@ function calcularRR(objeto,quantum){
             delete aux.ti
             delete aux.tf
             procesos.push(aux)
+            tiempo = tiempo + quantum;
         }
         else{
             aux.tf = aux.ti + aux.rafaga;
             resultado.push(aux)
-        }
-        tiempo = tiempo + quantum;
+            tiempo = tiempo + (aux.tf-aux.ti);
+        }  
     } 
     console.log("Tabla Estados:",procesos);
 }

@@ -1,3 +1,8 @@
+/* 
+Por: Juan Alejandro Orozco Ospina
+     Juan Camilo Palleja Raigosa
+*/
+
 resultado = [];
 resultadoFormatoGrafico = [];
 

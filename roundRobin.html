@@ -16,17 +16,24 @@
             <textarea name="" id="quantum-receiver" cols="50" rows="2"></textarea>
         </div>
         <div class="documentation">
-            <p>Para el correcto uso de los campos de ingreso, se requiere digitar los datos de la siguiente manera:<br><br><br><br></p>
-            <p id="format">Nombre del proceso : Rafaga en segundos</p>
+            <p>Para el correcto uso de los campos de ingreso, se requiere digitar los datos de la siguiente manera:<br><br></p>
+            <p id="format">Nombre del proceso: Tiempo Rafaga<br><br></p>
+            <p style="text-align: center;">Si desea ingresar más de uno los debe separar por espacios o comas<br><br></p>
+            <p id="format">Ejemplo P1:2,P2:5,P3:4</p>
         </div>
      </div>
      <div class="activate">
         <button id="activate-button" onclick="recibirDatos()">Enviar</button>
         <p></p>
+        <button id="clean-button" onclick="borrarGrafico()">Limpiar</button>
+        <p></p>
      </div>
-     <div class="action">
 
-     </div>
+          
+    <div id="chart-wrapper">
+        <canvas id="grantt"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="roundRobin.js"></script>
 </body>
 </html>

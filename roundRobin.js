@@ -1,42 +1,119 @@
+resultado = [];
+resultadoFormatoGrafico = [];
+
 function calcularRR(objeto,quantum){
-    procesos = objeto;
-    resultado = []
+    resultado = [];
+    resultadoFormatoGrafico = [];
+    tiempo = 0;
+    procesos = [...objeto];
     for (i = 0; i < procesos.length; i++) {
         aux = Object.assign({}, procesos[i]);
+        aux.ti = tiempo;
         if(procesos[i].rafaga > quantum){
             aux.rafaga = aux.rafaga - quantum;
-            procesos.push(aux)
-            procesoRealizado = {name:aux.name,rafaga:quantum};
+            aux.tf = aux.ti + quantum;
+            procesoRealizado = {name:aux.name,rafaga:quantum,ti:aux.ti,tf:aux.tf};
             resultado.push(procesoRealizado)
+            delete aux.ti
+            delete aux.tf
+            procesos.push(aux)
         }
         else{
+            aux.tf = aux.ti + aux.rafaga;
             resultado.push(aux)
         }
+        tiempo = tiempo + quantum;
     } 
-    console.log(resultado);
-    console.log(procesos);
+    console.log("Tabla Estados:",procesos);
+}
+
+function formatoGrafico(){
+    copiaR = [...resultado];
+    datasets = {};
+    data = [];
+    while(copiaR.length > 0){
+        buscar = Object.assign({}, copiaR[0]);
+        dataset = {
+                    label: buscar.name,
+                    data: [{x:[buscar.ti,buscar.tf],y:buscar.name}],
+                    borderWidth: 2,
+                    borderSkipped: false
+                  }
+        copiaR.splice(0,1);
+        for(i = 0; i < copiaR.length; i++) {
+            if(copiaR[i].name == buscar.name){
+                data = {x:[copiaR[i].ti,copiaR[i].tf],y:copiaR[i].name};
+                dataset.data.push(data);
+                copiaR.splice(i,1);
+                i = i - 1; 
+                
+            }
+        }
+        resultadoFormatoGrafico.push(dataset);
+    } 
+}
+
+function construirChart(ctx){
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+          datasets: resultadoFormatoGrafico
+        },
+        options: {
+          indexAxis:'y',
+          scales: {
+            y: {
+              beginAtZero: true,
+              stacked:true
+            }
+          },
+        }
+      });
 }
 
 function recibirDatos(){
     datos = [];
     objeto = [];
     quantum = document.querySelector('#quantum-receiver').value;
+    quantum = Number(quantum);
+    if(quantum <= 0 || !quantum){
+        alert("ERROR. QUANTUM DEBE SER MAYOR A 0")
+        return;
+    }
     vector = document.querySelector('#data-receiver').value;
-    separador = vector.split(' ');
+    regexObj = /.+:\d+(\s|,)?$/;
+    if(!regexObj.test(vector)){
+        alert("ERROR. LA SINTAXIS DE LOS PROCESOS ES INCORRECTA")
+        return;
+    }
+    separador = vector.split(/ |,/);
     for(let i = 0; i < separador.length; i++){
         dato = separador[i].split(':');
         datos.push(dato);
     }
+
     for(let i = 0; i < datos.length; i++){
-        for(let o = 0; o < datos[i].length; o++){
-            datos[i][1] = Number(datos[i][1])
-        }
+        datos[i][1] = Number(datos[i][1]);
+        prueba = {name:datos[i][0],rafaga:datos[i][1]};
+        objeto.push(prueba);     
     }
-    for(let p = 0; p < datos.length; p++){
-        prueba = {name:datos[p][0],rafaga:datos[p][1]};
-        objeto.push(prueba);
+
+    calcularRR(objeto,quantum);
+    formatoGrafico();
+    try{
+        const ctx = document.getElementById('grantt');
+        construirChart(ctx);
     }
-    console.log(objeto)
-    calcularRR(objeto,quantum)
+    catch(error){
+        alert("ERROR. DEBE LIMPIAR EL GRÁFICO PRIMERO")
+    }
 }
+
+function borrarGrafico(){
+    Chart.helpers.each(Chart.instances, function (instance) {
+        instance.destroy();
+      }); 
+}
+
+
 

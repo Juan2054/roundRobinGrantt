@@ -64,7 +64,7 @@ body{
     flex-basis: 20%;
 }
 
-#activate-button{
+#activate-button ,#clean-button{
     width: 70px;
     height: 30px;
     background-color: #4E6E81;
@@ -77,6 +77,20 @@ body{
     border-radius: 10px;
 }
 
+#clean-button{
+    margin-left: 20px;
+}
+
 .action{
     flex-basis: 60%;
 }
+
+#chart-wrapper {
+    display: inline-block;
+    position: relative;
+    background-color: white;
+    border: black solid 2px;
+    width: 1800px;
+    height: 1000px;
+    align-items: center;
+  }

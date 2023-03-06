@@ -117,10 +117,53 @@ body{
     margin-top: 50px;
 }
 
-
 #grantt{
     border-radius: 10px;
     background-color: white;
+}
+
+#table-button{
+    display: none;
+    margin-top: 50px;
+}
+
+#example_wrapper{
+    background-color: #dadada;
+    padding-bottom: 12px;
+    width: 80%;
+    border-radius: 10px;
+}
+
+#example{
+    display: none;
+    background-color: #dadada;
+    color: #1b2838;
+    height: 60vh;
+}
+
+.dataTables_filter{
+    margin-top: 8px;
+    margin-right: 10%;
+}
+
+#example_length{
+    margin-top: 8px;
+    margin-left: 10%;
+}
+
+table#example.dataTable tbody tr{
+    font-size: 24px;
+}
+
+table#example.dataTable tbody tr:hover {
+    font-size: 28px;
+    color: #66c0f4;
+    background-color: #1b2838;
+}
+   
+table#example.dataTable tbody tr:hover > .sorting_1 {
+    color: #66c0f4;
+    background-color: #1b2838;
 }
 
 

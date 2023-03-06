@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.css">
+    <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.js"></script>
     <link rel="preconnect" href="//fonts.googleapis.com">
     <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
     <link href="//fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet" type="text/css">
@@ -34,7 +37,10 @@
     <div id="chart-wrapper">
         <canvas id="grantt"></canvas>
         <button id="form-button" class="activate-button" onclick="borrarGrafico()">Limpiar</button>
+        <button id="form-button" class="activate-button" onclick="mostrarTabla()">Tabla</button>
     </div>
+    <table id="example" class="display" width="100%"></table>
+    <button id="table-button" class="activate-button" onclick="cerrarTabla()">Tabla</button>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="roundRobin.js"></script>
 </body>

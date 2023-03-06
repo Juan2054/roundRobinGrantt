@@ -1,5 +1,7 @@
 resultado = [];
 resultadoFormatoGrafico = [];
+tablita = [];
+tablon = [];
 
 function calcularRR(objeto,quantum){
     resultado = [];
@@ -26,6 +28,7 @@ function calcularRR(objeto,quantum){
         }  
     } 
     console.log("Tabla Estados:",procesos);
+    tablita = procesos;
 }
 
 function formatoGrafico(){
@@ -121,6 +124,44 @@ function borrarGrafico(){
     Chart.helpers.each(Chart.instances, function (instance) {
         instance.destroy();
       }); 
+}
+
+function mostrarTabla(){
+    grafico = document.querySelector('#chart-wrapper');
+    tabla = document.querySelector('#example');
+    botonTabla = document.querySelector('#table-button');
+    tabla.style.display = 'table';
+    botonTabla.style.display = 'block';
+    grafico.style.display = 'none';
+    string = "";
+    dato = [];
+    for(let i = 0; i < tablita.length; i++){
+        string = tablita[i].name + ' ' + tablita[i].rafaga;
+        dato = string.split(' ');
+        tablon.push(dato);
+    }
+    console.log(tablon);
+    $('#example').DataTable({
+        "destroy": true,
+        data: tablon,
+        columns: [
+            { title: 'Proceso' },
+            { title: 'Rafaga' },
+        ]
+    });
+}
+
+function cerrarTabla(){
+    grafico = document.querySelector('#chart-wrapper');
+    contenedorTabla = document.querySelector('#example_wrapper');
+    tabla = document.querySelector('#example');
+    botonTabla = document.querySelector('#table-button');
+    contenido = $('#example').DataTable();
+    contenido.clear().destroy();
+    contenedorTabla.style.display = 'none';
+    tabla.style.display = 'none';
+    botonTabla.style.display = 'none';
+    grafico.style.display = 'inline-block';
 }
 
 

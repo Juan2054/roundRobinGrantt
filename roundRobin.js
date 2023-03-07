@@ -132,6 +132,7 @@ function borrarGrafico(){
 }
 
 function mostrarTabla(){
+    tablon = [];
     grafico = document.querySelector('#chart-wrapper');
     tabla = document.querySelector('#example');
     botonTabla = document.querySelector('#table-button');
@@ -147,6 +148,8 @@ function mostrarTabla(){
     }
     console.log(tablon);
     $('#example').DataTable({
+        "scrollY": "600px",
+        "scrollCollapse": true,
         "destroy": true,
         data: tablon,
         columns: [

@@ -148,6 +148,7 @@ function mostrarTabla(){
     }
     console.log(tablon);
     $('#example').DataTable({
+        "order": [],
         "scrollY": "600px",
         "scrollCollapse": true,
         "destroy": true,

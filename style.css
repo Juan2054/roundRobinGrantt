@@ -133,7 +133,7 @@ body{
 }
 
 #example_wrapper{
-    background-color: #dadada;
+    background-color: #dedede;
     padding-bottom: 12px;
     width: 80%;
     border-radius: 10px;
@@ -141,7 +141,7 @@ body{
 
 #example{
     display: none;
-    background-color: #dadada;
+    background-color: #dedede;
     color: #1b2838;
     height: 60vh;
 }

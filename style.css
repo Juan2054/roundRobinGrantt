@@ -129,7 +129,8 @@ body{
 
 #table-button{
     display: none;
-    margin-top: 50px;
+    margin-top: 40px;
+    margin-left: 10%;
 }
 
 #example_wrapper{
@@ -171,4 +172,6 @@ table#example.dataTable tbody tr:hover > .sorting_1 {
     background-color: #1b2838;
 }
 
-
+.table-button-wrapper{
+    width: 100%;
+}

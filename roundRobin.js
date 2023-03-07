@@ -90,7 +90,7 @@ function recibirDatos(){
         return;
     }
     vector = document.querySelector('#data-receiver').value;
-    regexObj = /.+:\d+(\s|,)?$/;
+    regexObj = /(\w+:\d+(\s|,)?$)+/;
     if(!regexObj.test(vector)){
         alert("ERROR. LA SINTAXIS DE LOS PROCESOS ES INCORRECTA")
         return;
@@ -104,7 +104,9 @@ function recibirDatos(){
     for(let i = 0; i < datos.length; i++){
         datos[i][1] = Number(datos[i][1]);
         prueba = {name:datos[i][0],rafaga:datos[i][1]};
-        objeto.push(prueba);     
+        if(datos[i][0] != '' && datos[i][1]){
+            objeto.push(prueba); 
+        }                 
     }
     form = document.querySelector('.card');
     grafico = document.querySelector('#chart-wrapper');

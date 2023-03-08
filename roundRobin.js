@@ -108,6 +108,12 @@ function recibirDatos(){
             objeto.push(prueba); 
         }                 
     }
+    
+    if(objeto.length <= 0){
+        alert("ERROR. VERIFIQUE LOS PROCESOS")
+        return;
+    }
+
     form = document.querySelector('.card');
     grafico = document.querySelector('#chart-wrapper');
     form.style.display = 'none';
